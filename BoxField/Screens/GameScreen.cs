@@ -18,7 +18,12 @@ namespace BoxField
         //create a list to hold a column of boxes   
         List<Box> boxes = new List<Box>();
 
+        //starting x positions for boxes
+        int xLeft = 250;
+        int gap = 300;
+
         int newBoxCounter = 0;
+
 
         Random randGen = new Random();
 
@@ -33,8 +38,8 @@ namespace BoxField
         /// </summary>
         public void OnStart()
         {
-            CreateBox(250);
-            CreateBox(750);
+            CreateBox(xLeft);
+            CreateBox(xLeft + gap);
         }
 
         public void CreateBox(int x)
@@ -94,8 +99,8 @@ namespace BoxField
             //add new box if it is time
             if (newBoxCounter == 10)
             {
-                CreateBox(250);
-                CreateBox(750);
+                CreateBox(xLeft);
+                CreateBox(xLeft + gap);
 
                 newBoxCounter = 0;
             }
